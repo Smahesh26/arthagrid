@@ -1,53 +1,66 @@
 /* ==========================================================================
-   ARTHAGRID FINANCIAL SERVICES - Classy Grey, Gold & Navy Blue Design System
+   ARTHAGRID FINANCIAL SERVICES - Midnight Navy & Crimson Red Design System
+   Palette: #08234A (Navy), #b90102 (Crimson Red), Classy Light Grey Canvas
    Aesthetic: Quiet Luxury, Executive Private Wealth & Institutional Clarity
    ========================================================================== */
 
 :root {
-  /* Classy Background Greys */
-  --bg-page: #F3F4F7;          /* Refined architectural luxury grey */
-  --bg-page-alt: #E9ECEF;      /* Soft contrast grey for alternating sections */
+  /* Classy Architectural Light Backgrounds */
+  --bg-page: #F5F7FA;          /* Refined architectural luxury light grey */
+  --bg-page-alt: #EBF0F5;      /* Crisp tonal grey for alternating sections */
   --bg-card: #FFFFFF;          /* Pure crisp white card surface */
-  --bg-card-hover: #FCFDFF;
-  --bg-surface: #E5E8ED;
+  --bg-card-hover: #FFFFFF;
+  --bg-surface: #E2E7EE;
   --bg-input: #FFFFFF;
   
-  /* Logo Matched Navy & Slate Blues */
-  --brand-navy: #0A1D37;       /* Exact deep navy from ARTHAGRID logo */
-  --brand-navy-light: #162E52;
-  --brand-navy-subtle: #243E63;
+  /* Midnight Navy Blue (#08234A) */
+  --brand-navy: #08234A;       /* Exact rich deep navy requested */
+  --brand-navy-light: #0F356B; /* Rich navy hover tone */
+  --brand-navy-subtle: #194682;
+  --brand-navy-tint: rgba(8, 35, 74, 0.05);
   --brand-slate: #334155;
-  --brand-blue: #1D4ED8;
-  --brand-blue-subtle: rgba(29, 78, 216, 0.08);
+  --brand-blue: #154585;
+  --brand-blue-subtle: rgba(8, 35, 74, 0.07);
 
-  /* Logo Matched Champagne & Metallic Gold */
-  --brand-gold: #C5A059;       /* Classy metallic gold from logo arrow */
-  --brand-gold-dark: #9D7C36;
-  --brand-gold-light: #DFBF77;
-  --brand-gold-muted: #BFA054;
-  --brand-gold-subtle: rgba(197, 160, 89, 0.12);
-  --brand-gold-border: rgba(197, 160, 89, 0.38);
+  /* Prestige Crimson Red (#b90102) Signature Accent */
+  --brand-red: #b90102;        /* Exact signature crimson red requested */
+  --brand-red-dark: #910102;   /* Deeper red for active/hover */
+  --brand-red-light: #D91A1C;  /* Vibrant red highlight */
+  --brand-red-muted: #A30102;
+  --brand-red-subtle: rgba(185, 1, 2, 0.08);
+  --brand-red-border: rgba(185, 1, 2, 0.28);
+  --brand-red-glow: rgba(185, 1, 2, 0.18);
 
-  /* Classy Editorial Typography Colors */
+  /* Backward Compatibility Mappings for Existing Utility Names */
+  --brand-gold: #b90102;
+  --brand-gold-dark: #910102;
+  --brand-gold-light: #D91A1C;
+  --brand-gold-muted: #A30102;
+  --brand-gold-subtle: rgba(185, 1, 2, 0.08);
+  --brand-gold-border: rgba(185, 1, 2, 0.28);
+
+  /* High-Contrast Editorial Typography */
   --text-primary: #0F172A;     /* Deep slate for high-contrast, effortless reading */
   --text-secondary: #475569;   /* Elegant neutral grey body */
   --text-muted: #64748B;       /* Captions and labels */
-  --text-navy: #0A1D37;
-  --text-gold: #A58032;
+  --text-navy: #08234A;
+  --text-red: #b90102;
+  --text-gold: #b90102;
 
   /* Crisp Borders & Clean Executive Shadows */
   --border-light: #E2E8F0;
-  --border-card: #E5E7EB;
-  --border-card-hover: #C5A059;
+  --border-card: #E5E9F0;
+  --border-card-hover: #b90102;
   --border-subtle: #CBD5E1;
-  --shadow-xs: 0 1px 2px rgba(10, 29, 55, 0.04);
-  --shadow-card: 0 4px 16px rgba(10, 29, 55, 0.06);
-  --shadow-card-hover: 0 12px 30px rgba(10, 29, 55, 0.1);
-  --shadow-gold: 0 4px 18px rgba(197, 160, 89, 0.22);
+  --shadow-xs: 0 1px 3px rgba(8, 35, 74, 0.04);
+  --shadow-card: 0 4px 18px rgba(8, 35, 74, 0.06);
+  --shadow-card-hover: 0 14px 34px rgba(8, 35, 74, 0.11);
+  --shadow-red: 0 4px 18px rgba(185, 1, 2, 0.28);
+  --shadow-gold: 0 4px 18px rgba(185, 1, 2, 0.28);
 
-  /* Fonts */
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  /* Fonts - Montserrat for the whole website */
+  --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Refined Radii */
   --radius-sm: 6px;
@@ -89,7 +102,7 @@ body {
   pointer-events: none;
   z-index: 0;
   background-image: 
-    radial-gradient(rgba(10, 29, 55, 0.03) 1px, transparent 1px);
+    radial-gradient(rgba(8, 35, 74, 0.035) 1px, transparent 1px);
   background-size: 24px 24px;
   opacity: 0.7;
 }
@@ -190,25 +203,26 @@ img {
 .btn-primary {
   background: var(--brand-navy);
   color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(10, 29, 55, 0.2);
+  box-shadow: 0 2px 8px rgba(8, 35, 74, 0.2);
 }
 .btn-primary:hover {
   background: var(--brand-navy-light);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(10, 29, 55, 0.28);
+  box-shadow: 0 4px 14px rgba(8, 35, 74, 0.28);
   color: #FFFFFF;
 }
 
-.btn-gold {
-  background: var(--brand-gold);
-  color: var(--brand-navy);
+.btn-gold, .btn-red {
+  background: var(--brand-red);
+  color: #FFFFFF;
   font-weight: 700;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-red);
 }
-.btn-gold:hover {
-  background: var(--brand-gold-dark);
+.btn-gold:hover, .btn-red:hover {
+  background: var(--brand-red-dark);
   color: #FFFFFF;
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(185, 1, 2, 0.32);
 }
 
 .btn-secondary {
@@ -223,13 +237,13 @@ img {
   transform: translateY(-1px);
 }
 
-.btn-outline-gold {
+.btn-outline-gold, .btn-outline-red {
   background: transparent;
-  color: var(--brand-gold-dark);
-  border: 1px solid var(--brand-gold);
+  color: var(--brand-red);
+  border: 1.5px solid var(--brand-red);
 }
-.btn-outline-gold:hover {
-  background: var(--brand-gold);
+.btn-outline-gold:hover, .btn-outline-red:hover {
+  background: var(--brand-red);
   color: #FFFFFF;
 }
 
@@ -244,9 +258,9 @@ img {
 .top-bar {
   background: var(--brand-navy);
   color: #E2E8F0;
-  padding: 5px 0;
+  padding: 6px 0;
   font-size: 0.81rem;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+  border-bottom: 1px solid rgba(185, 1, 2, 0.35);
   position: relative;
   z-index: 101;
 }
@@ -270,10 +284,10 @@ img {
   font-weight: 500;
 }
 .top-bar-link:hover {
-  color: var(--brand-gold-light);
+  color: #FFA5A5;
 }
 .top-bar-highlight {
-  color: var(--brand-gold-light);
+  color: #FF8585;
   font-weight: 700;
 }
 
@@ -290,11 +304,11 @@ img {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-light);
-  box-shadow: 0 2px 10px rgba(10, 29, 55, 0.04);
+  box-shadow: 0 2px 10px rgba(8, 35, 74, 0.04);
   transition: var(--transition);
 }
 .site-header.scrolled {
-  box-shadow: 0 4px 18px rgba(10, 29, 55, 0.08);
+  box-shadow: 0 4px 18px rgba(8, 35, 74, 0.08);
 }
 
 .navbar {
@@ -329,15 +343,25 @@ img {
   box-shadow: none !important;
 }
 
-/* Footer Logo (Borderless & Big) */
+/* Footer Logo (Crisp Badge on Reddish Canvas) */
 .footer-logo-wrap {
-  margin-bottom: 16px;
-  display: inline-block;
-  background: transparent;
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(185, 1, 2, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+.footer-logo-wrap:hover {
+  transform: translateY(-2px);
 }
 .footer-logo-img {
-  height: 80px;
-  max-height: 85px;
+  height: 54px;
+  max-height: 58px;
   width: auto;
   border: none !important;
   outline: none !important;
@@ -448,14 +472,46 @@ img {
    ========================================================================== */
 .hero-section {
   position: relative;
-  padding: 18px 0 32px 0;
-  background: var(--bg-page);
+  padding: 28px 0 38px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(185, 1, 2, 0.08) 0%,
+    rgba(185, 1, 2, 0.035) 30%,
+    rgba(245, 247, 250, 0.75) 70%,
+    var(--bg-page) 100%
+  );
+  border-bottom: 1px solid rgba(185, 1, 2, 0.1);
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: 8%;
+  width: 460px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(185, 1, 2, 0.09) 0%, rgba(8, 35, 74, 0.02) 65%, transparent 80%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(185, 1, 2, 0.45) 50%, transparent 100%);
+  z-index: 1;
 }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 36px;
+  position: relative;
+  z-index: 2;
 }
 .hero-content {
   position: relative;
@@ -516,17 +572,43 @@ img {
   margin-top: 2px;
 }
 
-/* Hero Visual Box */
+/* Hero Visual Box (Right-aligned, seamless background-less 3D visual) */
 .hero-visual {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 2;
 }
+.hero-image-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  object-fit: contain;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(8, 35, 74, 0.08), 0 4px 16px rgba(185, 1, 2, 0.07);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.hero-image-wrap:hover .hero-banner-img {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 22px 48px rgba(8, 35, 74, 0.12), 0 8px 24px rgba(185, 1, 2, 0.12);
+}
+
 .hero-image-card {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(10, 29, 55, 0.14);
+  box-shadow: 0 12px 32px rgba(8, 35, 74, 0.14);
   border: 1px solid var(--border-light);
-  background: #081528;
 }
 .hero-image-card img {
   width: 100%;
@@ -550,7 +632,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 8px 24px rgba(10, 29, 55, 0.12);
+  box-shadow: 0 8px 24px rgba(8, 35, 74, 0.12);
   z-index: 3;
 }
 .floating-badge-1 {
@@ -847,7 +929,7 @@ img {
   background: var(--brand-gold);
   cursor: pointer;
   border: 3px solid #FFFFFF;
-  box-shadow: 0 1px 6px rgba(10, 29, 55, 0.25);
+  box-shadow: 0 1px 6px rgba(8, 35, 74, 0.25);
   transition: transform 0.15s ease;
 }
 .calc-slider::-webkit-slider-thumb:hover {
@@ -1000,7 +1082,7 @@ img {
 .exp-num {
   font-size: 2.6rem;
   font-weight: 800;
-  color: var(--brand-gold-light);
+  color: #FF8585;
   font-family: var(--font-display);
   line-height: 1;
 }
@@ -1379,14 +1461,14 @@ img {
 }
 .cta-banner {
   background: var(--brand-navy);
-  border: 1px solid var(--brand-gold-border);
+  border: 1px solid rgba(185, 1, 2, 0.4);
   border-radius: var(--radius-lg);
   padding: 48px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  box-shadow: var(--shadow-card-hover);
+  box-shadow: 0 16px 36px rgba(8, 35, 74, 0.16);
   color: #FFFFFF;
 }
 .cta-banner-title {
@@ -1400,13 +1482,30 @@ img {
 }
 
 /* ==========================================================================
-   Site Footer (Refined Midnight Navy)
+   Site Footer (Classy Reddish-Shade Executive Palette)
    ========================================================================== */
 .site-footer {
-  background: #081528;
-  color: #CBD5E1;
-  border-top: 1px solid rgba(197, 160, 89, 0.25);
+  position: relative;
+  background: linear-gradient(180deg, #1C0407 0%, #110204 100%);
+  color: #D1D5DB;
+  border-top: 2px solid var(--brand-red);
   padding: 70px 0 25px 0;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 220px;
+  background: radial-gradient(ellipse at top, rgba(185, 1, 2, 0.24) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.site-footer .container {
+  position: relative;
+  z-index: 1;
 }
 .footer-grid {
   display: grid;
@@ -1416,7 +1515,7 @@ img {
 }
 .footer-desc {
   font-size: 0.9rem;
-  color: #94A3B8;
+  color: #A3A3A3;
   line-height: 1.65;
   margin: 16px 0 20px 0;
 }
@@ -1428,24 +1527,25 @@ img {
   width: 36px;
   height: 36px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(185, 1, 2, 0.14);
+  border: 1px solid rgba(185, 1, 2, 0.32);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #F8FAFC;
+  color: #FFFFFF;
   transition: var(--transition);
 }
 .social-link:hover {
-  background: var(--brand-gold);
-  color: var(--brand-navy);
-  border-color: var(--brand-gold);
+  background: var(--brand-red);
+  color: #FFFFFF;
+  border-color: var(--brand-red);
+  box-shadow: 0 4px 14px rgba(185, 1, 2, 0.45);
 }
 
 .footer-heading {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #F8FAFC;
+  color: #FFFFFF;
   margin-bottom: 18px;
   position: relative;
 }
@@ -1456,7 +1556,7 @@ img {
   left: 0;
   width: 28px;
   height: 2px;
-  background: var(--brand-gold);
+  background: var(--brand-red);
 }
 
 .footer-links {
@@ -1465,14 +1565,14 @@ img {
   gap: 10px;
 }
 .footer-link-item a {
-  color: #94A3B8;
+  color: #B5B5B5;
   font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 .footer-link-item a:hover {
-  color: var(--brand-gold-light);
+  color: #FFA5A5;
   transform: translateX(3px);
 }
 
@@ -1485,22 +1585,22 @@ img {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: #94A3B8;
+  color: #B5B5B5;
   font-size: 0.9rem;
 }
 .footer-contact-item i {
-  color: var(--brand-gold);
+  color: #FF5A5C;
   margin-top: 4px;
 }
 .footer-contact-item a {
-  color: #E2E8F0;
+  color: #F3F4F6;
 }
 .footer-contact-item a:hover {
-  color: var(--brand-gold-light);
+  color: #FFA5A5;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(185, 1, 2, 0.22);
   padding-top: 22px;
   display: flex;
   justify-content: space-between;
@@ -1508,7 +1608,7 @@ img {
   flex-wrap: wrap;
   gap: 14px;
   font-size: 0.82rem;
-  color: #64748B;
+  color: #8E8E93;
 }
 .footer-legal-links {
   display: flex;
@@ -1582,7 +1682,7 @@ img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10, 29, 55, 0.65);
+  background: rgba(8, 35, 74, 0.65);
   backdrop-filter: blur(5px);
   z-index: 1000;
   display: flex;
@@ -1725,6 +1825,21 @@ img {
   }
   .hero-section {
     padding: 20px 0 35px 0;
+  }
+  .hero-image-wrap {
+    max-width: 420px;
+    margin: 20px auto 0 auto;
+  }
+  .floating-badge {
+    padding: 8px 12px;
+  }
+  .floating-badge-1 {
+    bottom: 8px;
+    left: 4px;
+  }
+  .floating-badge-2 {
+    top: 8px;
+    right: 4px;
   }
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
