@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initInfoModal();
   initForms();
   initBackToTop();
+  initWhatsAppLinks();
 });
 
 /* ==========================================================================
@@ -217,8 +218,20 @@ function initModals() {
       e.preventDefault();
       const service = btn.getAttribute('data-service') || 'General Inquiry';
       const serviceSelect = document.getElementById('modalServiceSelect');
-      if (serviceSelect && service) {
-        serviceSelect.value = service;
+      if (serviceSelect) {
+        let matched = false;
+        const target = service.toLowerCase();
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          const optVal = serviceSelect.options[i].value.toLowerCase();
+          if (optVal.includes(target) || target.includes(optVal)) {
+            serviceSelect.selectedIndex = i;
+            matched = true;
+            break;
+          }
+        }
+        if (!matched) {
+          serviceSelect.value = 'General Inquiry';
+        }
       }
       openModal(modal);
     });
@@ -537,6 +550,41 @@ function initInfoModal() {
           <li><i class="fas fa-check"></i> Guidance on debt-to-income optimization to re-qualify for lowest bank interest rates.</li>
         </ul>
       `
+    },
+
+    'education-loan': {
+      badge: '<i class="fas fa-graduation-cap"></i> <span>Academic Financing</span>',
+      title: 'Education Loan',
+      subtitle: 'Finance undergraduate & postgraduate degrees across India and top universities worldwide',
+      service: 'Education Loan',
+      content: `
+        <div class="info-modal-grid">
+          <div class="info-stat-card">
+            <div class="info-stat-label">Interest Rates</div>
+            <div class="info-stat-val">From 8.85% p.a.</div>
+          </div>
+          <div class="info-stat-card">
+            <div class="info-stat-label">Loan Quantum</div>
+            <div class="info-stat-val">Up to ₹1.5 Crores</div>
+          </div>
+          <div class="info-stat-card">
+            <div class="info-stat-label">Coverage</div>
+            <div class="info-stat-val">100% Tuition & Living</div>
+          </div>
+          <div class="info-stat-card">
+            <div class="info-stat-label">Tax Benefit</div>
+            <div class="info-stat-val">Sec 80E Deduction</div>
+          </div>
+        </div>
+        <h4><i class="fas fa-star"></i> Key Advantages</h4>
+        <ul class="info-feature-list">
+          <li><i class="fas fa-check"></i> Full moratorium period throughout study duration + 6 to 12 months after graduation.</li>
+          <li><i class="fas fa-check"></i> Covers tuition fees, accommodation, living expenses, travel tickets, and study laptops.</li>
+          <li><i class="fas fa-check"></i> Express sanction letters to meet university admission and visa deadlines.</li>
+        </ul>
+        <h4><i class="fas fa-file-invoice"></i> Required Documents</h4>
+        <p>Admission letter from recognized university/college, fee structure estimate, academic marksheets (10th, 12th, Degree), co-applicant KYC and income proofs.</p>
+      `
     }
   };
 
@@ -746,5 +794,50 @@ function initBackToTop() {
 
   topBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ==========================================================================
+   9. Universal WhatsApp Redirection Engine
+   Ensures seamless opening across mobile apps and desktop WhatsApp Web
+   ========================================================================== */
+function initWhatsAppLinks() {
+  const WHATSAPP_PHONE = '919289147417';
+
+  document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"], .whatsapp-link').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      let rawHref = link.getAttribute('href') || '';
+      let text = 'Hello ArthaGrid team, I would like to inquire about a loan.';
+
+      try {
+        if (rawHref.includes('text=')) {
+          const urlObj = new URL(rawHref, window.location.origin);
+          const t = urlObj.searchParams.get('text');
+          if (t) text = t;
+        }
+      } catch (err) {
+        const m = rawHref.match(/text=([^&]+)/);
+        if (m && m[1]) text = decodeURIComponent(m[1]);
+      }
+
+      const encodedText = encodeURIComponent(text);
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // Direct intent protocol for instant app launch on mobile
+        window.location.href = `whatsapp://send?phone=${WHATSAPP_PHONE}&text=${encodedText}`;
+        // Fallback to web API in case WhatsApp app is not installed
+        setTimeout(() => {
+          window.open(`https://api.whatsapp.com/send/?phone=${WHATSAPP_PHONE}&text=${encodedText}`, '_blank', 'noopener,noreferrer');
+        }, 1200);
+      } else {
+        // Desktop: open official WhatsApp Web / Desktop interface cleanly
+        window.open(`https://api.whatsapp.com/send/?phone=${WHATSAPP_PHONE}&text=${encodedText}`, '_blank', 'noopener,noreferrer');
+      }
+    });
   });
 }
