@@ -534,31 +534,24 @@ img {
 }
 
 /* ==========================================================================
-   Hero Section (Classy Grey & Pure White Harmony)
+   Hero Section (Panoramic Institutional Background Banner)
    ========================================================================== */
 .hero-section {
   position: relative;
-  padding: 28px 0 38px 0;
-  background: linear-gradient(180deg,
-      rgba(185, 1, 2, 0.08) 0%,
-      rgba(185, 1, 2, 0.035) 30%,
-      rgba(245, 247, 250, 0.75) 70%,
-      var(--bg-page) 100%);
+  padding: 85px 0 95px 0;
+  background-color: #F8FAFC;
+  background-image:
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.94) 40%,
+      rgba(255, 255, 255, 0.65) 65%,
+      rgba(255, 255, 255, 0.15) 100%),
+    url('../images/hero-banner.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
   border-bottom: 1px solid rgba(185, 1, 2, 0.1);
   overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  right: 8%;
-  width: 460px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(185, 1, 2, 0.09) 0%, rgba(8, 35, 74, 0.02) 65%, transparent 80%);
-  filter: blur(50px);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .hero-section::after {
@@ -572,52 +565,49 @@ img {
   z-index: 1;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: center;
-  gap: 36px;
-  position: relative;
-  z-index: 2;
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 780px;
 }
 
 .hero-title {
-  margin: 10px 0 12px 0;
+  margin: 14px 0 16px 0;
   color: var(--brand-navy);
   font-weight: 800;
-  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .hero-description {
-  font-size: 1.04rem;
-  line-height: 1.55;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.65;
+  margin-bottom: 26px;
   color: var(--text-secondary);
+  max-width: 660px;
 }
 
 .hero-cta-group {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
 
-/* Hero Stats Bar (Crisp White Card on Grey) */
+/* Hero Stats Bar (Crisp Frosted Card) */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding: 12px 16px;
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 8px 24px rgba(8, 35, 74, 0.08);
+  max-width: 720px;
 }
 
 .hero-stat-item {
@@ -645,85 +635,6 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-top: 2px;
-}
-
-/* Hero Visual Box (Right-aligned, seamless background-less 3D visual) */
-.hero-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 2;
-}
-
-.hero-image-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-banner-img {
-  width: 100%;
-  height: auto;
-  max-height: 440px;
-  object-fit: contain;
-  display: block;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 16px 40px rgba(8, 35, 74, 0.08), 0 4px 16px rgba(185, 1, 2, 0.07);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.hero-image-wrap:hover .hero-banner-img {
-  transform: translateY(-4px) scale(1.015);
-  box-shadow: 0 22px 48px rgba(8, 35, 74, 0.12), 0 8px 24px rgba(185, 1, 2, 0.12);
-}
-
-.hero-image-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 12px 32px rgba(8, 35, 74, 0.14);
-  border: 1px solid var(--border-light);
-}
-
-.hero-image-card img {
-  width: 100%;
-  height: auto;
-  max-height: 460px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.hero-image-card:hover img {
-  transform: scale(1.02);
-}
-
-/* Floating White/Gold Badges */
-.floating-badge {
-  position: absolute;
-  background: #FFFFFF;
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-md);
-  padding: 12px 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 8px 24px rgba(8, 35, 74, 0.12);
-  z-index: 3;
-}
-
-.floating-badge-1 {
-  bottom: 20px;
-  left: -20px;
-}
-
-.floating-badge-2 {
-  top: 20px;
-  right: -20px;
 }
 
 .badge-icon {
@@ -2121,9 +2032,14 @@ img {
    Responsive
    ========================================================================== */
 @media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
+  .hero-content {
+    max-width: 100%;
     text-align: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-cta-group {
@@ -2131,6 +2047,7 @@ img {
   }
 
   .hero-stats {
+    margin: 0 auto;
     justify-content: center;
   }
 
@@ -2210,30 +2127,20 @@ img {
   }
 
   .hero-section {
-    padding: 20px 0 35px 0;
-  }
-
-  .hero-image-wrap {
-    max-width: 420px;
-    margin: 20px auto 0 auto;
-  }
-
-  .floating-badge {
-    padding: 8px 12px;
-  }
-
-  .floating-badge-1 {
-    bottom: 8px;
-    left: 4px;
-  }
-
-  .floating-badge-2 {
-    top: 8px;
-    right: 4px;
+    padding: 40px 0 45px 0;
+    background-image:
+      linear-gradient(180deg,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(255, 255, 255, 0.94) 65%,
+        rgba(255, 255, 255, 0.85) 100%),
+      url('../images/hero-banner.jpg');
+    background-position: center top;
   }
 
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
+    padding: 14px 16px;
+    gap: 12px;
   }
 
   .steps-grid {
