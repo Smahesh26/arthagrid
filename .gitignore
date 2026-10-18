@@ -1,0 +1,19 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Vercel Deployment Artifacts
+.vercel
+
+# Node / Dependencies (if added)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
